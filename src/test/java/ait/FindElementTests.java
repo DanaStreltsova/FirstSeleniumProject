@@ -79,5 +79,46 @@ public class FindElementTests {
         driver.findElement(By.cssSelector("[href^='/log']"));
         //end -> $
         driver.findElement(By.cssSelector("[href$='search']"));
+         //tag + id
+        driver.findElement(By.cssSelector("input#city"));
+         //tag + class
+        driver.findElement(By.cssSelector("div.search-card"));
+        //tag + id + [attr='value']
+        driver.findElement(By.cssSelector("input#city[type='text']"));
+    }
+
+    @Test
+    public void findElementByXpath(){
+        //id -> xpath -//*[@id='value']
+        //driver.findElement(By.id("city"));
+        driver.findElement(By.xpath("//input[@id='city']"));
+
+        driver.findElement(By.xpath("//div[@class='header']"));
+
+        //contains ->//*[contains(
+        driver.findElement(By.xpath("//h2[contains(.,'Yalla')]"));
+
+        driver.findElement(By.xpath("//h2[text()='Type your data and hit Yalla!']"));
+        driver.findElement(By.xpath("//h2[.='Type your data and hit Yalla!']"));
+
+        driver.findElement(By.xpath("//a[@class='navigation-link']/.."));
+
+        driver.findElement(By.xpath("//h1/parent::*"));
+        driver.findElement(By.xpath("//h1/parent::div"));
+        driver.findElement(By.xpath("//h1/.."));
+
+        driver.findElement(By.xpath("//h1/ancestor::*"));
+        driver.findElement(By.xpath("//h1/ancestor::div"));
+        driver.findElement(By.xpath("//h1/ancestor::div[2]"));
+
+
+        driver.findElement(By.xpath("//h1/following-sibling::form"));
+
+        driver.findElement(By.xpath("//h2/preceding-sibling::*"));
+
+
+
+
+
     }
 }
