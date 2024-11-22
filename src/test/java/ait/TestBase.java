@@ -44,38 +44,17 @@ public class TestBase {
     }
 
     public void fillRegisterForm(User user) {
-        password(By.name("FirstName"), user.getName());
-        password(By.name("LastName"), user.getLastName());
-        password(By.name("Email"), user.getEmail());
-        password(By.name("Password"), user.getPassword());
-        password(By.name("ConfirmPassword"), user.getConfirm());
+        type(By.name("FirstName"), user.getName());
+        type(By.name("LastName"), user.getLastName());
+        type(By.name("Email"), user.getEmail());
+        type(By.name("Password"), user.getPassword());
+        type(By.name("ConfirmPassword"), user.getConfirm());
     }
 
     public void clickOnRegister() {
         click(By.cssSelector("[href='/register']"));
     }
 
-    public void confirm(By locator, String text) {
-        email(locator, text);
-    }
-
-    public void password(By locator, String text) {
-        lastName(locator, text);
-    }
-
-    public void email(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
-    }
-
-    public void lastName(By locator, String text) {
-        firstName(locator, text);
-    }
-
-    public void firstName(By locator, String text) {
-        confirm(locator, text);
-    }
 
     public void click(By locator) {
         driver.findElement(locator).click();
