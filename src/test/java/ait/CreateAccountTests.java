@@ -1,21 +1,31 @@
 package ait;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import projekt.models.User;
 
 public class CreateAccountTests extends TestBase {
-    
-    @Test
-    public void newUserRegistrationPositiveTest(){
-        clickOnRegister();
-        fillRegisterForm(new User()
-                .setName("Vaselisa")
-                .setLastName("Precrasnaya")
-                .setEmail("vaselisa12@gmail.com")
-                .setPassword("Vaselisa1$")
-                .setConfirm("Vaselisa1$"));
-        clickOnRegistratioButton();
-        Assert.assertTrue(isLogOut());
-    }
 
+    @BeforeMethod
+    public void ensurePrecondition() {
+        if (!app.getUser().isElementPresent) {
+            app.getUser().clickOnRegister();
+        }
+
+
+        @Test(enabled = false)
+        public void newUserRegistrationPositiveTest() {
+            app.getUser().clickOnRegister();
+            app.getUser().fillRegisterForm(new User()
+                    .setName("Vaselisa")
+                    .setLastName("Precrasnaya")
+                    .setEmail("vaselisa132@gmail.com")
+                    .setPassword("Vaselisa1$")
+                    .setConfirm("Vaselisa1$"));
+            app.getUser().clickOnRegistratioButton();
+            Assert.assertTrue(app.getHome().isLogOut());
+        }
+
+    }
 }

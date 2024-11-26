@@ -1,4 +1,4 @@
-package ait;
+package projekt.models;
 
 public class User {
     String name;
