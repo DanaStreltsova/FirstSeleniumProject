@@ -1,5 +1,6 @@
 package ait;
 
+import org.openqa.selenium.remote.Browser;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -8,7 +9,9 @@ import projekt.fw.AppManager;
 
 public class TestBase {
 
-    protected static AppManager app = new AppManager();
+
+
+    protected static AppManager app = new AppManager(System.getProperty("browser", Browser.CHROME.browserName()));
 
    // @BeforeMethod
     @BeforeSuite

@@ -9,13 +9,12 @@ public class CreateAccountTests extends TestBase {
 
     @BeforeMethod
     public void ensurePrecondition() {
-        if (!app.getUser().isElementPresent) {
-            app.getUser().clickOnRegister();
+        if (!app.getUser().isElementPresent()) {
+            app.getHome().isLogOut();
         }
 
-
-        @Test(enabled = false)
-        public void newUserRegistrationPositiveTest() {
+        @Test
+        public void newUserRegistrationPositiveTest(){
             app.getUser().clickOnRegister();
             app.getUser().fillRegisterForm(new User()
                     .setName("Vaselisa")

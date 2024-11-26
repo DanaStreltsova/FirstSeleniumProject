@@ -17,13 +17,13 @@ public class BaseHelper {
 
     public void type(By locator, String text) {
         if(text !=null){
-            click();
+            click(By.id("register-button"));
             driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
         }
     }
 
-    public void click() {
+    public void click(By id) {
         driver.findElement(locator).click();
     }
 }

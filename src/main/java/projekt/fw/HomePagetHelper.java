@@ -13,6 +13,6 @@ public class HomePagetHelper extends  BaseHelper {
     }
 
     public void clickOnHomeLink() {
-        click();
+        click(By.xpath("//body/div[4]/div[1]"));
     }
 }

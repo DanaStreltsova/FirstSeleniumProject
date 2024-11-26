@@ -6,18 +6,13 @@ import projekt.models.User;
 
 public class UserHelper extends BaseHelper
 {
-    public boolean isElementPresent;
-
-    public boolean isElementPresent(){
-     return false;   
-}
 
     public UserHelper(WebDriver driver) {
         super(driver);
     }
 
     public void clickOnRegistratioButton() {
-        click();
+        click(By.id("register-button"));
     }
 
     public void fillRegisterForm(User user) {
@@ -29,6 +24,6 @@ public class UserHelper extends BaseHelper
     }
 
     public void clickOnRegister() {
-        click();
+        click(By.cssSelector("[href='/register']"));
     }
 }
