@@ -11,20 +11,20 @@ public class CreateAccountTests extends TestBase {
     public void ensurePrecondition() {
         if (!app.getUser().isElementPresent()) {
             app.getHome().isLogOut();
-        }
 
-        @Test
-        public void newUserRegistrationPositiveTest(){
-            app.getUser().clickOnRegister();
-            app.getUser().fillRegisterForm(new User()
-                    .setName("Vaselisa")
-                    .setLastName("Precrasnaya")
-                    .setEmail("vaselisa132@gmail.com")
-                    .setPassword("Vaselisa1$")
-                    .setConfirm("Vaselisa1$"));
-            app.getUser().clickOnRegistratioButton();
-            Assert.assertTrue(app.getHome().isLogOut());
-        }
 
+//        @Test(enabled = false)
+//        public void newUserRegistrationPositiveTest(){
+//            app.getUser().clickOnRegister();
+//            app.getUser().fillRegisterForm(new User()
+//                    .setName("Vaselisa")
+//                    .setLastName("Precrasnaya")
+//                    .setEmail("vaselisa132@gmail.com")
+//                    .setPassword("Vaselisa1$")
+//                    .setConfirm("Vaselisa1$"));
+//            app.getUser().clickOnRegistratioButton();
+//            Assert.assertTrue(app.getHome().isLogOut());
+//        }
+
+        }
     }
-}

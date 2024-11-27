@@ -6,9 +6,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class AppManager{
+public class AppManager {
 
-     String browser;
+    String browser;
     public WebDriver driver;
     UserHelper user;
     HomePagetHelper home;
@@ -16,17 +16,17 @@ public class AppManager{
     BaseHelper base;
 
     public AppManager(String browser) {
-       this.browser=browser;
+        this.browser = browser;
     }
 
     public void init() {
 
         driver = new ChromeDriver();
 
-        if(browser.equalsIgnoreCase("chrome")){
-            driver= new ChromeDriver();
-        }else if(browser.equalsIgnoreCase("firfox")){
-            driver= new FirefoxDriver();
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("firfox")) {
+            driver = new FirefoxDriver();
         }
         driver.manage().window().maximize();
         driver.navigate().to("https://demowebshop.tricentis.com");
@@ -54,3 +54,4 @@ public class AppManager{
         return contact;
     }
 
+}
