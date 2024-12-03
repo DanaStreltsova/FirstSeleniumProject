@@ -26,4 +26,8 @@ public class UserHelper extends BaseHelper
     public void clickOnRegister() {
         click(By.cssSelector("[href='/register']"));
     }
+
+    public boolean isRegisterPresent() {
+        return isElementPresent(By.cssSelector("[href='/register']"));
+    }
 }

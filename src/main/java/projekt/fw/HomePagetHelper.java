@@ -9,10 +9,15 @@ public class HomePagetHelper extends  BaseHelper {
     }
 
     public boolean isLogOut() {
-        return isElementPresent(By.className("ico-logout"));
+        return isElementPresent(By.cssSelector("[href='/register']"));
     }
 
     public void clickOnHomeLink() {
         click(By.xpath("//body/div[4]/div[1]"));
+    }
+
+    public void clickOnLogOut() {
+        click(By.cssSelector("[href='/register']"));
+
     }
 }

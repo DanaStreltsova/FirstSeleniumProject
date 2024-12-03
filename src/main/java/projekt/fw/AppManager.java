@@ -21,7 +21,7 @@ public class AppManager {
 
     public void init() {
 
-        driver = new ChromeDriver();
+
 
         if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
